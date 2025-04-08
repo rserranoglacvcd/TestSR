@@ -155,6 +155,10 @@
 						remain confidential and will not be made public or
 						shared with any other party as permitted by law.
 					</p>
+					<p>
+						<strong>In house developer tags:&nbsp;</strong>test text
+                         .
+					</p>
 				</G-Step>
 				<G-Step heading="Service Request Type">
 					<!--<b-form-group
@@ -253,6 +257,15 @@
 										invalid
 									></image-radio-button>
 								</div>
+
+                                  <div class="col mt-4 d-flex flex-column">
+									<image-radio-button
+										value="programmer"
+										src="images/nerd.png"
+										invalid
+									></image-radio-button>
+								</div>
+
 							</div>
 							<g-alert
 								v-show="form.WaterSource == 'Mosquitoes'"
@@ -392,6 +405,24 @@
 									</div>
 								</div>
 							</g-alert>
+
+	                            <g-alert                     
+								v-show="form.WaterSource == 'programmer'"
+								class="mt-4"
+								variant="danger"
+							>
+								<div class="row align-items-center">
+									<div class="col">
+										<p class="mb-0">
+											GLACVCD does not respond to programmers. 
+                                             . You
+											should contact private pest control.
+										</p>
+									</div>
+								</div>
+							</g-alert>
+
+
 						</b-form-radio-group>
 					</b-form-group>
 					<input-group
@@ -687,7 +718,7 @@ export default {
 					"Your selection is not a valid service request.",
 					value => {
 						console.log(value);
-						return ["Bees", "Rodents", "Fire Ants"].includes(value);
+						return ["Bees", "Rodents", "Fire Ants", "Programmer"].includes(value);
 					}
 				);
 			},
